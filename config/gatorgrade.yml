@@ -1,0 +1,17 @@
+# --> check the R program
+- src/code.r:
+    - description: Ensure that test_summarize.py file exists in the act3/src/code.r directory
+      check: ConfirmFileExists
+    - description: Complete all TODOs and remove the TODO markers in the test_summarize.py
+      check: MatchFileFragment
+      options:
+        fragment: TODO
+        count: 0
+        exact: true
+
+
+# --> check that the number of commits in the Git repository is beyond a threshold
+- description: Have at least a specific minimum number of commits (3) in repository
+  check: CountCommits
+  options:
+    count: 3
